@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<script type="text/javascript" src="stack.js"></script>
+<script>
+let raw = {
+	x: [100, 200, 300, 400, 500, 600],
+	y: [
+		[100, 300, 100, 200, 250, 150], 
+		[400, 270, 320, 500, 750, 450], 
+		[120, 320, 120, 400, 350, 150], 
+	]
+}
+let obj = stackedLineChart(
+	600,
+	400,  
+	raw, 
+	['car', 'shop', 'name'],
+);
+let container = obj.container;
+let canvas = obj.canvas;
+let render = obj.render;
+document.body.appendChild(container);
+window.onclick = () => {
+	render();
+}
+</script>
+</body>
+</html>
